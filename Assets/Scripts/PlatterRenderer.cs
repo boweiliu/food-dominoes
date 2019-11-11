@@ -21,7 +21,7 @@ public class PlatterRenderer : MonoBehaviour
 
     public void setPlatter(Platter platter)
     {
-
+        this.platter = platter;
     }
 
     private void placePlatter(/* Platter platter */)
