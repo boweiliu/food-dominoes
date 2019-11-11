@@ -146,8 +146,9 @@ MonoBehaviour:
   FoodOptions:
   - {fileID: 11400000, guid: 9b1579e73cb566546bc9f677ebb11cfa, type: 2}
   - {fileID: 11400000, guid: 55b0748bea2e3324d90f3de314a64b89, type: 2}
-  gridWidth: 3
-  gridHeight: 2
+  - {fileID: 11400000, guid: 7f6ff989450834f4f8fe593b96072ff3, type: 2}
+  gridWidth: 5
+  gridHeight: 4
   horizontalSpace: 1.5
   verticalSpace: 1.5
 --- !u!4 &340003738
@@ -240,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585192654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 3, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1607e890e8b0cde47ae9d6d6f4dffc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platterGoal: 3
+  platterGoal: 5
   platterObject: {fileID: 4648962978814052623, guid: 870f49948dc50f4439c9faba37c99b7a,
     type: 3}
 --- !u!4 &1796793030
