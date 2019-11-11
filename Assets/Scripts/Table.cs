@@ -7,6 +7,8 @@ public class Table : MonoBehaviour
     FoodType[] RequestedFood;
     bool[] fed;
 
+    GameObject[] FoodObjects;
+
     public int dishCount
     {
         get
@@ -33,7 +35,18 @@ public class Table : MonoBehaviour
     {
         RequestedFood = foods;
         fed = new bool[dishCount];
+        FoodObjects = new GameObject[dishCount];
 
-        //Update Visuals
+        for (int i = 0; i < dishCount; i++)
+        {
+            FoodType food = RequestedFood[i];
+            GameObject foodObj = Instantiate(food.prefab, transform);
+            FoodObjects[i] = foodObj;
+
+            //TODO: Properly do table stuff so we can make this function nice and neat
+            foodObj.transform.localPosition = new Vector3((i - 1.5f) / 3 / 16, (i - 1.5f) / 3 / 16);
+        }
     }
+
+
 }

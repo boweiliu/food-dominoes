@@ -109,6 +109,6 @@ public class GameManager : MonoBehaviour
 
     private FoodType getRandomFood()
     {
-        return FoodOptions[(int)Random.Range(0, FoodOptions.Length - 1)];
+        return FoodOptions[Random.Range(0, FoodOptions.Length)];
     }
 }
