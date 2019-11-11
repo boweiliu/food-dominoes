@@ -15,7 +15,7 @@ public class dragAndDropCollider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        camera = Camera.main;
     }
 
     // Update is called once per frame

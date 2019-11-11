@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlatterRenderer : MonoBehaviour
 {
     Platter platter;
+    bool exploded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,21 @@ public class PlatterRenderer : MonoBehaviour
 
     public void setPlatter(Platter platter)
     {
+        this.platter = platter;
+    }
 
+    private void placePlatter(/* Platter platter */)
+    {
+        GameObject thisPlatterSprite = this.transform.GetChild(0).gameObject;
+        if (exploded == false)
+        {
+            GameObject.Destroy(thisPlatterSprite);
+            exploded = true;
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        this.placePlatter();
     }
 }

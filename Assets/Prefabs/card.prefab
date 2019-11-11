@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.22727273, y: 0.22727273, z: 1}
   m_Children: []
   m_Father: {fileID: 8487136807359689227}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8321277395590083937
 SpriteRenderer:
@@ -92,8 +92,10 @@ GameObject:
   - component: {fileID: 1227598692}
   - component: {fileID: 1227598688}
   - component: {fileID: 1227598689}
+  - component: {fileID: 114268087041024622}
+  - component: {fileID: 114246874577531434}
   m_Layer: 0
-  m_Name: Card
+  m_Name: card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +112,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2432866878035046730}
   - {fileID: 4344809582686671624}
+  - {fileID: 2432866878035046730}
   - {fileID: 9159357675719213061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -215,6 +217,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+--- !u!114 &114268087041024622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648962978814052623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767031c8c09ad4534bedcdaa716ae57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rows: 1000
+  offsetX: -300.75
+  columns: 1000
+  offsetY: -300.75
+  delta: 1.5
+--- !u!114 &114246874577531434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648962978814052623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443390bc64213c4428374d6ca845c26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7231790792295114139
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +336,7 @@ GameObject:
   - component: {fileID: 4344809582686671624}
   - component: {fileID: 6650403799991683504}
   m_Layer: 0
-  m_Name: New Piskel-3.png (6)
+  m_Name: PlatterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +354,7 @@ Transform:
   m_LocalScale: {x: 14.545455, y: 14.545455, z: 16}
   m_Children: []
   m_Father: {fileID: 8487136807359689227}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6650403799991683504
 SpriteRenderer:
