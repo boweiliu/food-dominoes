@@ -60,21 +60,39 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void endPlatterDrag(Vector3 position)
+    public void endPlatterDrag(Platter platter, Vector3 position)
     {
         //translate from world space into game space
+        int x = Mathf.FloorToInt(position.x / horizontalSpace);
+        int y = Mathf.FloorToInt(position.y / verticalSpace);
+        servePlatter(platter, x, y);
     }
 
     // x and y are the coordinates, 1 indexed
     // (since <1,1> will hit <0,0> <0,1> <1,0> and <1,1>)
     private void servePlatter(Platter platter, int x, int y)
     {
-
+        //Top Left
+        tableGrid[x - 1][y].feedDish(platter.Foods[0]);
+        //Top Right
+        tableGrid[x][y].feedDish(platter.Foods[1]);
+        //Bottom Right
+        tableGrid[x][y - 1].feedDish(platter.Foods[2]);
+        //Bottom Left
+        tableGrid[x - 1][y - 1].feedDish(platter.Foods[3]);
     }
 
     public Platter newPlatter()
     {
         Platter platter =  new Platter();
+        platter.Foods[0] = getRandomFood();
+        for (int i = 1; i < 4; i++)
+        {
+            if (Random.Range(0, 1) > 0.7f)
+            {
+                platter.Foods[i] = getRandomFood();
+            }
+        }
         return platter;
     }
 
@@ -84,8 +102,13 @@ public class GameManager : MonoBehaviour
         FoodType[] requests = new FoodType[requestCount];
         for(int i = 0; i < requestCount; i++)
         {
-            requests[i] = FoodOptions[(int)Random.Range(0, FoodOptions.Length - 1)];
+            requests[i] = getRandomFood();
         }
         table.setFoodRequest(requests);
+    }
+
+    private FoodType getRandomFood()
+    {
+        return FoodOptions[(int)Random.Range(0, FoodOptions.Length - 1)];
     }
 }
