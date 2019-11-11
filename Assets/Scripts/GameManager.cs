@@ -63,8 +63,8 @@ public class GameManager : MonoBehaviour
     public void endPlatterDrag(Platter platter, Vector3 position)
     {
         //translate from world space into game space
-        int x = Mathf.FloorToInt(position.x / horizontalSpace);
-        int y = Mathf.FloorToInt(position.y / verticalSpace);
+        int x = Mathf.FloorToInt(position.x / horizontalSpace) + 1;
+        int y = Mathf.FloorToInt(position.y / verticalSpace) + 1;
         servePlatter(platter, x, y);
     }
 
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public Platter newPlatter()
     {
-        Platter platter =  new Platter();
+        Platter platter =  Platter.CreateInstance<Platter>();
         platter.Foods[0] = getRandomFood();
         for (int i = 1; i < 4; i++)
         {

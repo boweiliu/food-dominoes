@@ -146,6 +146,10 @@ MonoBehaviour:
   FoodOptions:
   - {fileID: 11400000, guid: 9b1579e73cb566546bc9f677ebb11cfa, type: 2}
   - {fileID: 11400000, guid: 55b0748bea2e3324d90f3de314a64b89, type: 2}
+  gridWidth: 3
+  gridHeight: 2
+  horizontalSpace: 1.5
+  verticalSpace: 1.5
 --- !u!4 &340003738
 Transform:
   m_ObjectHideFlags: 0
@@ -241,4 +245,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1796793028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796793030}
+  - component: {fileID: 1796793029}
+  m_Layer: 0
+  m_Name: Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1796793029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796793028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1607e890e8b0cde47ae9d6d6f4dffc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platterGoal: 3
+  platterObject: {fileID: 4648962978814052623, guid: 870f49948dc50f4439c9faba37c99b7a,
+    type: 3}
+--- !u!4 &1796793030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796793028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.1391606, y: 3.1793852, z: -0.01947247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

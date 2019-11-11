@@ -22,6 +22,8 @@ public class PlatterRenderer : MonoBehaviour
     public void setPlatter(Platter platter)
     {
         this.platter = platter;
+
+        //TODO: Update Graphics
     }
 
     private void placePlatter(/* Platter platter */)
@@ -36,6 +38,7 @@ public class PlatterRenderer : MonoBehaviour
 
     private void OnMouseUp()
     {
-        this.placePlatter();
+        GameManager.Instance.endPlatterDrag(platter, transform.position);
+        Destroy(gameObject);
     }
 }
