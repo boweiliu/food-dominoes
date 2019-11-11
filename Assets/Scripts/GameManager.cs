@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float verticalSpace = 1.5f;
 
+    private int[] xOffset = { -1, 0, 0, -1 };
+    private int[] yOffset = { 0, 0, -1, -1 };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour
 
 
         tableGrid = new Table[gridWidth][];
-        for (int i = 0; i < gridWidth;i++)
+        for (int i = 0; i < gridWidth; i++)
         {
             tableGrid[i] = new Table[gridHeight];
             for (int j = 0; j < gridHeight; j++)
@@ -59,7 +62,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
     public void endPlatterDrag(Platter platter, Vector3 position)
     {
         //translate from world space into game space
@@ -72,19 +75,22 @@ public class GameManager : MonoBehaviour
     // (since <1,1> will hit <0,0> <0,1> <1,0> and <1,1>)
     private void servePlatter(Platter platter, int x, int y)
     {
-        //Top Left
-        tableGrid[x - 1][y].feedDish(platter.Foods[0]);
-        //Top Right
-        tableGrid[x][y].feedDish(platter.Foods[1]);
-        //Bottom Right
-        tableGrid[x][y - 1].feedDish(platter.Foods[2]);
-        //Bottom Left
-        tableGrid[x - 1][y - 1].feedDish(platter.Foods[3]);
+        for(int i = 0; i < 4; i++)
+        {
+            int a = x + xOffset[i];
+            int b = y + yOffset[i];
+            if (a < 0 || b < 0 || a >= gridWidth || b >= gridHeight) continue;
+            Table table = tableGrid[a][b];
+            if (table)
+            {
+                table.feedDish(platter.Foods[i]);
+            }
+        }
     }
 
     public Platter newPlatter()
     {
-        Platter platter =  Platter.CreateInstance<Platter>();
+        Platter platter = Platter.CreateInstance<Platter>();
         platter.Foods[0] = getRandomFood();
         for (int i = 1; i < 4; i++)
         {
@@ -100,7 +106,7 @@ public class GameManager : MonoBehaviour
     {
         int requestCount = 4;
         FoodType[] requests = new FoodType[requestCount];
-        for(int i = 0; i < requestCount; i++)
+        for (int i = 0; i < requestCount; i++)
         {
             requests[i] = getRandomFood();
         }
