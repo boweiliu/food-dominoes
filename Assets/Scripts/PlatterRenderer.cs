@@ -19,7 +19,12 @@ public class PlatterRenderer : MonoBehaviour
         
     }
 
-    public void setPlatter(/* Platter platter */)
+    public void setPlatter(Platter platter)
+    {
+
+    }
+
+    private void placePlatter(/* Platter platter */)
     {
         GameObject thisPlatterSprite = this.transform.GetChild(0).gameObject;
         if (exploded == false)
@@ -31,6 +36,6 @@ public class PlatterRenderer : MonoBehaviour
 
     private void OnMouseUp()
     {
-        this.setPlatter();
+        this.placePlatter();
     }
 }
