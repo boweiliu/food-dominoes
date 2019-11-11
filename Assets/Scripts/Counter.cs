@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Serving counter holds and requests for new platters
+// Manages initial placement of platters
 public class Counter : MonoBehaviour
 {
     // Start is called before the first frame update

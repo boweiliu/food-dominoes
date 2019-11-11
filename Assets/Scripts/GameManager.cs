@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
 
     Table[][] tableGrid;
 
+    [SerializeField]
+    private GameObject TablePrefab;
+
+    [SerializeField]
+    private FoodType[] FoodOptions;
 
 
     // Start is called before the first frame update
@@ -24,14 +29,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         //Possibly generate table grid here
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    }
+    
     public void endPlatterDrag(Vector3 position)
     {
         //translate from world space into game space
@@ -52,6 +53,12 @@ public class GameManager : MonoBehaviour
 
     public void finishTable(Table table)
     {
-
+        int requestCount = 4;
+        FoodType[] requests = new FoodType[requestCount];
+        for(int i = 0; i < requestCount; i++)
+        {
+            requests[i] = FoodOptions[(int)Random.Range(0, FoodOptions.Length - 1)];
+        }
+        table.setFoodRequest(requests);
     }
 }
