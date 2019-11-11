@@ -18,6 +18,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private FoodType[] FoodOptions;
 
+    [SerializeField]
+    private int gridWidth = 3;
+
+    [SerializeField]
+    private int gridHeight = 2;
+
+    [SerializeField]
+    private float horizontalSpace = 1.5f;
+
+    [SerializeField]
+    private float verticalSpace = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +42,22 @@ public class GameManager : MonoBehaviour
         //Possibly generate table grid here
 
 
+        tableGrid = new Table[gridWidth][];
+        for (int i = 0; i < gridWidth;i++)
+        {
+            tableGrid[i] = new Table[gridHeight];
+            for (int j = 0; j < gridHeight; j++)
+            {
+                GameObject tableObj = Instantiate(TablePrefab);
+                Table table = tableObj.GetComponent<Table>();
+                if (table)
+                {
+                    tableGrid[i][j] = table;
+                    finishTable(table);
+                }
+                tableObj.transform.position = new Vector3(i * horizontalSpace, j * verticalSpace);
+            }
+        }
     }
     
     public void endPlatterDrag(Vector3 position)
