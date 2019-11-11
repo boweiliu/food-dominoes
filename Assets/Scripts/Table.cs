@@ -25,6 +25,7 @@ public class Table : MonoBehaviour
             {
                 fed[i] = true;
                 //Update Visuals
+                FoodObjects[i].SetActive(false);
                 return;
             }
         }

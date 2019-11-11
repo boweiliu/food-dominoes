@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         platter.Foods[0] = getRandomFood();
         for (int i = 1; i < 4; i++)
         {
-            if (Random.Range(0, 1) > 0.7f)
+            if (Random.Range(0f, 1f) > 0.7f)
             {
                 platter.Foods[i] = getRandomFood();
             }
