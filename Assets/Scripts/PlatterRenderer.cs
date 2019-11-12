@@ -34,7 +34,7 @@ public class PlatterRenderer : MonoBehaviour
             {
                 GameObject foodObj = Instantiate(food.prefab, transform);
                 foodObj.transform.localPosition = new Vector3(xPos[i], yPos[i], -1.5f);
-                foodObj.transform.localScale = new Vector3(0.3f, 0.3f);
+                foodObj.transform.localScale = new Vector3(2f, 2f);
             }
         }
     }

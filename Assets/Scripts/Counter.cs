@@ -33,7 +33,7 @@ public class Counter : MonoBehaviour
 
                 platter.transform.position = new Vector3(
                     transform.position.x,
-                    transform.position.y + i);
+                    transform.position.y + i *1.5f);
             }
         }
     }
