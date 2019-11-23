@@ -1,6 +1,10 @@
 # food-dominoes
 github game jam 2019
 
+## Git stuff
+
+Default branch is develop. Fork feature branches off develop. Use master to snapshot develop.
+
 ## Color palette
 
 https://coolors.co/654321-987654-987676-654365-437698
