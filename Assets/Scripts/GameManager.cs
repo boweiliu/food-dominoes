@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     private int[] xOffset = { -1, 0, 0, -1 };
     private int[] yOffset = { 0, 0, -1, -1 };
 
+    private float[] foodQuantityDistr = { 0.25f, 0.5f, 0.25f, 0f, 0f };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,9 +104,20 @@ public class GameManager : MonoBehaviour
         return platter;
     }
 
+    private int randomRequestCount(float[] distribution) {
+        float cmSm = Random.Range(0f, 1f);
+        for (int i = 0; i < distribution.Length; i++) {
+            if (cmSm < distribution[i]) {
+                return i;
+            }
+            cmSm -= distribution[i];
+        }
+        return distribution.Length - 1;
+    }
+
     public void finishTable(Table table)
     {
-        int requestCount = 4;
+        int requestCount = randomRequestCount(foodQuantityDistr);
         FoodType[] requests = new FoodType[requestCount];
         for (int i = 0; i < requestCount; i++)
         {

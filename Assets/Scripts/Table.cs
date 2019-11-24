@@ -37,15 +37,19 @@ public class Table : MonoBehaviour
         RequestedFood = foods;
         fed = new bool[dishCount];
         FoodObjects = new GameObject[dishCount];
+        int numFoods = foods.Length;
+        float centerOffset = (numFoods - 1.0f) / 2.0f;
 
-        for (int i = 0; i < dishCount; i++)
+        for (int i = 0; i < numFoods; i++)
         {
             FoodType food = RequestedFood[i];
             GameObject foodObj = Instantiate(food.prefab, transform);
             FoodObjects[i] = foodObj;
 
+  
+
             //TODO: Properly do table stuff so we can make this function nice and neat
-            foodObj.transform.localPosition = new Vector3((i - 1.5f) / 3 / 16, (i - 1.5f) / 3 / 16, -2);
+            foodObj.transform.localPosition = new Vector3((i - centerOffset) / 3 / 16, (i - centerOffset) / 3 / 16, -2);
         }
     }
 
